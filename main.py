@@ -6,7 +6,7 @@ from day01 import day01
 
 def main():
     day_1_input = load_integers("./inputs/day01.txt")
-    day_1_part_1_result = list(day01.part1(day_1_input))
+    day_1_part_1_result = day01.part1(day_1_input)
     print(f"day 1 part 1: {day_1_part_1_result}")
 
 
