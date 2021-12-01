@@ -1,0 +1,15 @@
+* Advent of Code 2021 solutions
+
+  Python solutions for advent of code 2021.
+
+  To run solutions for all days, use:
+
+  #+begin_src sh
+  python main.py
+  #+end_src
+
+  To run unit tests, use:
+
+  #+begin_src sh
+  python -m pytest
+  #+end_src
