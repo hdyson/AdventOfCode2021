@@ -1,4 +1,4 @@
-from day01 import part1
+from days.day01 import part1
 
 
 def test_end_to_end() -> None:
