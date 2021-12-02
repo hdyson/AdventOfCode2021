@@ -3,7 +3,7 @@
 from collections import deque
 
 
-def part1(input_data):
+def part1(input_data: list[int]) -> int:
     """
     Returns solution to part 1 of day 1.
 
@@ -28,7 +28,7 @@ def part1(input_data):
     return count
 
 
-def part2(input_data):
+def part2(input_data: list[int]) -> int:
     """
     Returns solution to part 1 of day 1.
 
@@ -49,7 +49,7 @@ def part2(input_data):
     """
     previous = deque(input_data[:3], maxlen=3)
     current = deque(input_data[1:4], maxlen=3)
-    count = sum(current) > sum(previous)
+    count = int(sum(current) > sum(previous))
     for next_value in input_data[4:]:
         previous.append(current[-1])
         current.append(next_value)

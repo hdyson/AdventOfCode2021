@@ -1,7 +1,8 @@
 """Some common utility functions."""
+from typing import Iterator
 
 
-def load_integers(filename):
+def load_integers(filename: str) -> Iterator[int]:
     """Return each line from the input as an integer.
 
     Parameters
