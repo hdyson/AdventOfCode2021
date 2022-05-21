@@ -1,5 +1,4 @@
-import days
-from days.day02 import part1, parse_line
+from day02 import part1, parse_line
 
 
 INPUT_DATA = [

@@ -6,7 +6,7 @@ from common import load
 
 def main() -> None:
 
-    for day in range(1, 3):
+    for day in range(1, 4):
         day_input = list(load(f"./inputs/day{day:02}.txt"))
         day_code = importlib.import_module(f"days.day{day:02}")
         part_1_result = day_code.part1(day_input)

@@ -1,5 +1,4 @@
-import days
-from days.day02 import part2
+from day02 import part2
 
 
 INPUT_DATA = [

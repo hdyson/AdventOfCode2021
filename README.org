@@ -11,5 +11,6 @@
   To run unit tests, use:
 
   #+begin_src sh
+  cd days
   python -m pytest
   #+end_src
