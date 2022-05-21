@@ -1,21 +1,22 @@
 #!/usr/bin/env python
 """Launcher to run all days of advent of code 2021."""
-from common import load_integers, load_strings
-from days import day01, day02
+import importlib
+from common import load
 
 
 def main() -> None:
-    day_1_input = list(load_integers("./inputs/day01.txt"))
-    day_1_part_1_result = day01.part1(day_1_input)
-    day_1_part_2_result = day01.part2(day_1_input)
-    print(f"day 1 part 1: {day_1_part_1_result} day 1 part 2: {day_1_part_2_result}")
 
-    day_2_input = load_strings("./inputs/day02.txt")
-    day_2_part_1_result = day02.part1(day_2_input)
-    day_2_input = load_strings("./inputs/day02.txt")
-    day_2_part_2_result = day02.part2(day_2_input)
-    print(f"day 2 part 1: {day_2_part_1_result} day 2 part 2: {day_2_part_2_result}")
+    for day in range(1, 3):
+        day_input = list(load(f"./inputs/day{day:02}.txt"))
+        day_code = importlib.import_module(f"days.day{day:02}")
+        part_1_result = day_code.part1(day_input)
+        part_2_result = day_code.part2(day_input)
+        print(f"day {day} part 1: {part_1_result} day {day} part 2: {part_2_result}")
 
 
 if __name__ == "__main__":
     main()
+
+# Local Variables:
+# pyvenv-workon: venv
+# END:
