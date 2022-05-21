@@ -3,7 +3,11 @@
 from collections import deque
 
 
-def part1(input_data: list[int]) -> int:
+def _to_ints(strings: list[str]) -> list[int]:
+    return [int(string) for string in strings]
+
+
+def part1(input_data: list[str]) -> int:
     """
     Returns solution to part 1 of day 1.
 
@@ -13,7 +17,7 @@ def part1(input_data: list[int]) -> int:
     Parameters
     ----------
 
-    input_data : list of integers
+    input_data : list of strings
 
     Returns
     -------
@@ -22,13 +26,14 @@ def part1(input_data: list[int]) -> int:
         Solution to part 1.
 
     """
-    pairs = zip(input_data[1:], input_data[:-1])
+    data = _to_ints(input_data)
+    pairs = zip(data[1:], data[:-1])
     count = len([pair for pair in pairs if pair[0] > pair[1]])
-    
+
     return count
 
 
-def part2(input_data: list[int]) -> int:
+def part2(input_data: list[str]) -> int:
     """
     Returns solution to part 1 of day 1.
 
@@ -38,7 +43,7 @@ def part2(input_data: list[int]) -> int:
     Parameters
     ----------
 
-    input_data : list of integers
+    input_data : list of strings
 
     Returns
     -------
@@ -47,10 +52,11 @@ def part2(input_data: list[int]) -> int:
         Solution to part 1.
 
     """
-    previous = deque(input_data[:3], maxlen=3)
-    current = deque(input_data[1:4], maxlen=3)
+    data = _to_ints(input_data)
+    previous = deque(data[:3], maxlen=3)
+    current = deque(data[1:4], maxlen=3)
     count = int(sum(current) > sum(previous))
-    for next_value in input_data[4:]:
+    for next_value in data[4:]:
         previous.append(current[-1])
         current.append(next_value)
         if sum(current) > sum(previous):
