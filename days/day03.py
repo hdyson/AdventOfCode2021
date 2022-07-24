@@ -7,7 +7,7 @@ import scipy.stats
 
 def part1(input_data: list[str]) -> int:
     """
-    Return product of forward movements and depth.
+    Return product of epsilon_rate and gamma_rate.
 
     Parameters
     ----------
@@ -32,6 +32,19 @@ def part1(input_data: list[str]) -> int:
 
 
 def part2(input_data: list[str]) -> int:
+    """
+    Return product of oxygen and co2 ratings.
+
+    Parameters
+    ----------
+
+    input_data : list of str
+
+    Returns
+    -------
+
+    : int
+    """
     oxygen_rating = 0
     co2_rating = 0
 
